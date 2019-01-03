@@ -1,0 +1,41 @@
+{
+  "name": "geoblaze-cli",
+  "version": "0.0.0",
+  "description": "Command Line Interface (CLI) for GeoBlaze",
+  "main": "src/index.js",
+  "bin": {
+    "geoblaze": "src/index.js"
+  },
+  "scripts": {
+    "test": "node ./node_modules/.bin/mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GeoTIFF/geoblaze-cli.git"
+  },
+  "keywords": [
+    "geoblaze",
+    "raster",
+    "georaster",
+    "geovector",
+    "satellite",
+    "imagery",
+    "analysis",
+    "image"
+  ],
+  "author": "Daniel J. Dufour",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/GeoTIFF/geoblaze-cli/issues"
+  },
+  "homepage": "https://github.com/GeoTIFF/geoblaze-cli#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "geoblaze": "^0.1.9",
+    "georaster": "^0.4.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
+  }
+}
