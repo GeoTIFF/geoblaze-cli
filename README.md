@@ -26,6 +26,12 @@ Here's instructions for each command
 
 ## Identify
 You can write the command `identify` or `id` for short, to get the pixel value at a certain location.
+### Usage
+```
+geoblaze id GEORASTER GEOVECTOR
+```
+
+### Example
 ```
 geoblaze id image.tiff "-70,40"
 ```
