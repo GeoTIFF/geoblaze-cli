@@ -7,6 +7,7 @@ NAME
   geoblaze - a command line interface to blazing fast raster analysis
 
 Usage:
+  geoblaze help
   geoblaze identify <georaster> <point>
   geoblaze id <georaster> <point>
   geoblaze bandArithmetic <georaster> <expression>
@@ -21,7 +22,8 @@ Usage:
   geoblaze sum <georaster> [geovector]
   geoblaze version
 
-CALCULATIONS:
+COMMANDS:
+  help                    Display this helpful information
   identify or id           Get the value of the pixel at the specified point.  The Point should be specified as a longitude and latitude pair "-40,20"
   bandArithmetic            Run band arithmetic, like NDVI, on a raster and save the result to a file.
   histogram Calculate the histogram of a raster.
