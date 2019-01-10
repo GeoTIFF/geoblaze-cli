@@ -2,35 +2,35 @@
 .SH "NAME"
 \fBgeoblaze\fR - a command line interface for blazing fast raster analysis
 .SH "SYNOPSIS"
-.P
- \fBgeoblaze help\fR
-.P
- \fBgeoblaze identify <georaster> <point>\fR
-.P
- \fBgeoblaze id <georaster> <point>\fR
 .RS 0
 .IP \(bu 4
-\fBgeoblaze\fR \fBbandArithmetic\fR <\fBgeoraster\fR> <\fBexpression\fR>
+\fBgeoblaze help\fR
 .IP \(bu 4
-\fBgeoblaze\fR \fBhistogram\fR <\fBgeoraster\fR> \fB\fBgeovector\fR\fR \fB\fB--numClasses=<numClasses>\fR\fR
+\fBgeoblaze identify <georaster> <point>\fR
 .IP \(bu 4
-\fBgeoblaze\fR \fBmax\fR <\fBgeoraster\fR> \fB\fBgeovector\fR\fR
+\fBgeoblaze id <georaster> <point>\fR
 .IP \(bu 4
-\fBgeoblaze\fR \fBmin\fR <\fBgeoraster\fR> \fB\fBgeovector\fR\fR
+\fBgeoblaze bandArithmetic <georaster> <expression>\fR
 .IP \(bu 4
-\fBgeoblaze\fR \fBmean\fR <\fBgeoraster\fR> \fB\fBgeovector\fR\fR
+\fBgeoblaze histogram <georaster> \[lB]geovector\[rB] \[lB]--scaleType={nominal|ratio}\[rB] \[lB]--numClasses=<numClasses>\[rB] \[lB]--classType={equal-interal|quantile}\[rB]\fR
 .IP \(bu 4
-\fBgeoblaze\fR \fBmedian\fR <\fBgeoraster\fR> \fB\fBgeovector\fR\fR
+\fBgeoblaze max <georaster> \[lB]geovector\[rB]\fR
 .IP \(bu 4
-\fBgeoblaze\fR \fBmode\fR <\fBgeoraster\fR> \fB\fBgeovector\fR\fR
+\fBgeoblaze min <georaster> \[lB]geovector\[rB]\fR
 .IP \(bu 4
-\fBgeoblaze\fR \fBrasterCalculator\fR <\fBgeoraster\fR> <\fBfunctionBody\fR>
+\fBgeoblaze mean <georaster> \[lB]geovector\[rB]\fR
 .IP \(bu 4
-\fBgeoblaze\fR \fBcalc\fR <\fBgeoraster\fR> \fB\fBgeovector\fR\fR <\fBfunctionBody\fR>
+\fBgeoblaze median <georaster> \[lB]geovector\[rB]\fR
 .IP \(bu 4
-\fBgeoblaze\fR \fBsum\fR <\fBgeoraster\fR> \fB\fBgeovector\fR\fR
+\fBgeoblaze mode <georaster> \[lB]geovector\[rB]\fR
 .IP \(bu 4
-\fBgeoblaze\fR \fBversion\fR
+\fBgeoblaze rasterCalculator <georaster> <functionBody>\fR
+.IP \(bu 4
+\fBgeoblaze calc <georaster> \[lB]geovector\[rB] <functionBody>\fR
+.IP \(bu 4
+\fBgeoblaze sum <georaster> \[lB]geovector\[rB]\fR
+.IP \(bu 4
+\fBgeoblaze version\fR
 .RE 0
 
 .SH "DESCRIPTION"

@@ -1,20 +1,21 @@
 # geoblaze(1) -- a command line interface for blazing fast raster analysis
 
 ## SYNOPSIS
-  - `geoblaze help`
-  - `geoblaze identify <georaster> <point>`
-  - `geoblazeid <`georaster`> <`point`>
-  - `geoblaze` `bandArithmetic` <`georaster`> <`expression`>
-  - `geoblaze` `histogram` <`georaster`> [`geovector`] [`--scaleType={nominal|ratio}`] [`--numClasses=<numClasses>`] [`--classType={equal-interal|quantile}`]
-  - `geoblaze` `max` <`georaster`> [`geovector`]
-  - `geoblaze` `min` <`georaster`> [`geovector`]
-  - `geoblaze` `mean` <`georaster`> [`geovector`]
-  - `geoblaze` `median` <`georaster`> [`geovector`]
-  - `geoblaze` `mode` <`georaster`> [`geovector`]
-  - `geoblaze` `rasterCalculator` <`georaster`> <`functionBody`>
-  - `geoblaze` `calc` <`georaster`> [`geovector`] <`functionBody`>
-  - `geoblaze` `sum` <`georaster`> [`geovector`]
-  - `geoblaze` `version`
+- `geoblaze help`
+- `geoblaze identify <georaster> <point>`
+- `geoblaze id <georaster> <point>`
+- `geoblaze bandArithmetic <georaster> <expression>`
+- `geoblaze histogram <georaster> [geovector] [--scaleType={nominal|ratio}] [--numClasses=<numClasses>] [--classType={equal-interal|quantile}]`
+- `geoblaze max <georaster> [geovector]`
+- `geoblaze min <georaster> [geovector]`
+- `geoblaze mean <georaster> [geovector]`
+- `geoblaze median <georaster> [geovector]`
+- `geoblaze mode <georaster> [geovector]`
+- `geoblaze rasterCalculator <georaster> <functionBody>`
+- `geoblaze calc <georaster> [geovector] <functionBody>`
+- `geoblaze sum <georaster> [geovector]`
+- `geoblaze version`
+
 
 ## DESCRIPTION
   GeoBlaze CLI is an open-source command line interface to the GeoBlaze JavaScript Raster Processing Engine (geoblaze.io).  It allows you to do simple basic aggregate statistics like, mean, median and mode while only typing one line.  You can also use it to simply run band arithmetic like NDVI and save the result to a file.
