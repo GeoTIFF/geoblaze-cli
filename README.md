@@ -4,22 +4,35 @@ Command Line Interface (CLI) for [GeoBlaze](geoblaze.io)
 # Basic Documentation
 ```
 Usage:
- geoblaze identify <georaster> <point>
- geoblaze id <georaster> <point>
- geoblaze bandArithmetic <georaster> [geovector] <expression>
- geoblaze histogram <georaster> [geovector] [--scaleType={nominal|ratio}] [--numClasses=<numClasses>] [--classType={equal-interal|quantile}]
- geoblaze max <georaster> [geovector]
- geoblaze min <georaster> [geovector]
- geoblaze mean <georaster> [geovector]
- geoblaze median <georaster> [geovector]
- geoblaze mode <georaster> [geovector]
- geoblaze rasterCalculator <georaster> [geovector] <functionBody>
- geoblaze calc <georaster> [geovector] <functionBody>
- geoblaze sum <georaster> [geovector]
- geoblaze --version
+  geoblaze identify <georaster> <point>
+  geoblaze id <georaster> <point>
+  geoblaze bandArithmetic <georaster> [geovector] <expression>
+  geoblaze histogram <georaster> [geovector] [--scaleType={nominal|ratio}] [--numClasses=<numClasses>] [--classType={equal-interal|quantile}]
+  geoblaze max <georaster> [geovector]
+  geoblaze min <georaster> [geovector]
+  geoblaze mean <georaster> [geovector]
+  geoblaze median <georaster> [geovector]
+  geoblaze mode <georaster> [geovector]
+  geoblaze rasterCalculator <georaster> [geovector] <functionBody>
+  geoblaze calc <georaster> [geovector] <functionBody>
+  geoblaze sum <georaster> [geovector]
+  geoblaze --version
+
 
 Options:
- --version Show version
+  --version Show version
+
+
+
+Author:
+  Daniel J. Dufour
+
+Internet Resources:
+  Source Code Repository: https://github.com/GeoTIFF/geoblaze-cli
+  Package Manager Entry: https://www.npmjs.com/package/geoblaze-cli
+
+LICENSING:
+  
 ```
 
 You can write the command `identify` or `id` for short, to get the pixel value at a certain location.
