@@ -3,119 +3,49 @@ Command Line Interface (CLI) for [GeoBlaze](geoblaze.io)
 
 # Basic Documentation
 ```
+NAME
+  geoblaze - a command line interface to blazing fast raster analysis
+
 Usage:
   geoblaze identify <georaster> <point>
   geoblaze id <georaster> <point>
-  geoblaze bandArithmetic <georaster> [geovector] <expression>
+  geoblaze bandArithmetic <georaster> <expression>
   geoblaze histogram <georaster> [geovector] [--scaleType={nominal|ratio}] [--numClasses=<numClasses>] [--classType={equal-interal|quantile}]
   geoblaze max <georaster> [geovector]
   geoblaze min <georaster> [geovector]
   geoblaze mean <georaster> [geovector]
   geoblaze median <georaster> [geovector]
   geoblaze mode <georaster> [geovector]
-  geoblaze rasterCalculator <georaster> [geovector] <functionBody>
+  geoblaze rasterCalculator <georaster> <functionBody>
   geoblaze calc <georaster> [geovector] <functionBody>
   geoblaze sum <georaster> [geovector]
-  geoblaze --version
+  geoblaze version
 
-
-Options:
-  --version Show version
-
-
+CALCULATIONS:
+  identify or id           Get the value of the pixel at the specified point.  The Point should be specified as a longitude and latitude pair "-40,20"
+  bandArithmetic            Run band arithmetic, like NDVI, on a raster and save the result to a file.
+  histogram Calculate the histogram of a raster.
+  max                      Get the highest value in the raster, ignoring no data values.
+  min                      Get the lowest value in the raster, ignoring no data values.
+  mean                     Get the mean average of pixel values in a raster.  You can optionally specify a geovector file, like a geojson or a shapefile, so the calculation is only run on the pixels of the raster inside of the vectors.
+  median                   Get the median average of pixel values in a raster.  You can optionally specify a geovector file, like a geojson or a shapefile, so the calculation is only run on the pixels of the raster inside of the vectors.
+  mode                     Get the most common pixel value in a raster.  You can optionally specify a geovector file, like a geojson or a shapefile, so the calculation is only run on the pixels of the raster inside of the vectors.
+  rasterCalculator or calc Run a function on the specified raster file and save the new raster to a file.
+  sum                      Get the sum of pixel values in a raster file. You can optionally specify a geovector file, like a geojson or a shapefile, so the calculation is only run on the pixels of the raster inside of the vectors.
+  version                   Show version, which is found in the package.json
 
 Author:
-  Daniel J. Dufour
+  Daniel J. Dufour: https://danieljdufour.com
 
 Internet Resources:
   Source Code Repository: https://github.com/GeoTIFF/geoblaze-cli
   Package Manager Entry: https://www.npmjs.com/package/geoblaze-cli
+  Slack Channel: https://geotiff.slack.com
+  Issue Tracker: https://github.com/GeoTIFF/geoblaze-cli/issues
 
 LICENSING:
   The GeoBlaze CLI is distributed under the MIT License.  See the file "LICENSE" in the GeoBlaze CLI source-distribution for information on terms & conditions for accessing and otherwise using the GeoBlaze CLI and for a DISCLAIMER OF ALL WARRANTIES.
-```
 
-You can write the command `identify` or `id` for short, to get the pixel value at a certain location.
-### Usage
+SUPPORT:
+  Email the maintainer Daniel J. Dufour at daniel.j.dufour@gmail.com
 ```
-geoblaze id GEORASTER GEOVECTOR
-```
-
-### Example
-```
-geoblaze id image.tiff "-70,40"
-```
-
-
-
-The **NAME_OF_CALCULATION** can be one of the following:
- - bandArithmetic (or math)
- - identify (or id)
- - histogram (or hist)
- - max
- - min
- - mean
- - median
- - mode
- - rasterCalculator or (calc)
- - sum
-
-The **GEORASTER** can be the name of a file found in your current directory, a url to the file, or a relative or absolute path to the file in your computer.  If you specify a relative path, start it with `./`.
-
-The **GEOVECTOR** is optional.  You can provide it as a path to a geojson file, path to a zipped shapefile, or a url to a GeoJSON or Zipped Shapefile.
-
-The **COMMAND_SPECIFIC_ARGUMENTS** may or may not exist depending on the command.
-
-Here's instructions for each command
-
-## Sum
-Get the sum of the pixels in an area for each band
-```
-geoblaze sum image.tiff borders.geojson
-```
-
-### Averages (Mean, Median, and Mode)
-You can calculate the average pixel value for each band in a raster.  You can also specify the location within the raster to use for the calculation.  The command takes the format of `geoblaze CALCULATION GEORASTER GEOVECTOR`.    Here's some examples,
-
-### Median of all Pixel Values in a GeoTIFF
-```
-geoblaze median image.tiff
-```
-### Median within a Specified Area
-```
-geoblaze median image.tiff area.shp
-```
-
-## Min
-Get the lowest value of all pixels by band.  You can also specify an area within the raster.
-### Min of all Pixels
-```
-geoblaze min image.tiff
-```
-### Min within a Specified Area
-```
-geoblaze min image.tiff area.shp
-```
-
-## Max
-Get the highest value of all pixels by band.  You can also specify an area within the raster.
-### Max of all Pixels
-```
-geoblaze max image.tiff
-```
-### Max within a Specified Area
-```
-geoblaze max image.tiff area.shp
-```
-
-## Histogram
-`geoblaze histogram image.tiff borders.geojson`
-
-## bandArithmetic
-`geoblaze bandArithmetic image.tiff '(c - b)/(c + b)'`
-
-## rasterCalculator
-`geoblaze rasterCalculator image.tiff 'return A > 100 ? 1 : 0'`
-
-# Contact
- - Daniel J. Dufour (daniel.j.dufour@gmail.com)
