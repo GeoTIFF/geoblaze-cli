@@ -1,20 +1,25 @@
 # geoblaze-cli
 Command Line Interface (CLI) for [GeoBlaze](geoblaze.io)
 
-# Usage
+# Basic Documentation
 ```
-geoblaze identify <georaster> <point>
-geoblaze id <georaster> <point>
-geoblaze bandArithmetic <georaster> [geovector] <expression>
-geoblaze histogram <georaster> [geovector] [--scaleType={nominal|ratio}] [--numClasses=<numClasses>] [--classType={equal-interal|quantile}]
-geoblaze max <georaster> [geovector]
-geoblaze min <georaster> [geovector]
-geoblaze mean <georaster> [geovector]
-geoblaze median <georaster> [geovector]
-geoblaze mode <georaster> [geovector]
-geoblaze rasterCalculator <georaster> [geovector] <functionBody>
-geoblaze calc <georaster> [geovector] <functionBody>
-geoblaze sum <georaster> [geovector]
+Usage:
+ geoblaze identify <georaster> <point>
+ geoblaze id <georaster> <point>
+ geoblaze bandArithmetic <georaster> [geovector] <expression>
+ geoblaze histogram <georaster> [geovector] [--scaleType={nominal|ratio}] [--numClasses=<numClasses>] [--classType={equal-interal|quantile}]
+ geoblaze max <georaster> [geovector]
+ geoblaze min <georaster> [geovector]
+ geoblaze mean <georaster> [geovector]
+ geoblaze median <georaster> [geovector]
+ geoblaze mode <georaster> [geovector]
+ geoblaze rasterCalculator <georaster> [geovector] <functionBody>
+ geoblaze calc <georaster> [geovector] <functionBody>
+ geoblaze sum <georaster> [geovector]
+ geoblaze --version
+
+Options:
+ --version Show version
 ```
 
 You can write the command `identify` or `id` for short, to get the pixel value at a certain location.
