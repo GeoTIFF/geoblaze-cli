@@ -34,19 +34,31 @@ GeoBlaze CLI is an open-source command line interface to the GeoBlaze JavaScript
 * `sum`:  Get the sum of pixel values in a raster file. You can optionally specify a geovector file, like a geojson or a shapefile, so the calculation is only run on the pixels of the raster inside of the vectors.
 * `version`:  Show version, which is found in the package.json
 
+## Examples
+### Get the Pixel Value at Paris, France
+`geoblaze id image.tiff "48.8567,2.3508"`
+### Get Acreage of Wheat in Ukraine
+`geoblaze sum wheat.tiff ukraine.geojson`
+### Calculate NDVI
+`geoblaze bandArithmetic image.tiff '(c - b)/(c + b)'`
+### Binarize a Raster
+`geoblaze rasterCalculator image.tiff 'return A > 100 ? 1 : 0'`
+### More Examples
+  https://github.com/GeoTIFF/geoblaze-cli/blob/master/EXAMPLES.md
+
 ## AUTHOR
   Daniel J. Dufour: https://danieljdufour.com
 
 ## BUGS
-  - https://github.com/GeoTIFF/geoblaze-cli/issues/
+- https://github.com/GeoTIFF/geoblaze-cli/issues/
 
 ## INTERNET RESOURCES
-  - Source Code Repository: https://github.com/GeoTIFF/geoblaze-cli
-  - Package Manager Entry: https://www.npmjs.com/package/geoblaze-cli
-  - Slack Channel: https://geotiff.slack.com
-  - Issue Tracker: https://github.com/GeoTIFF/geoblaze-cli/issues
-  - GeoBlaze Information: https://geoblaze.io
-  - Intersection Algorithm: https://medium.com/@DanielJDufour/calculating-intersection-of-polygon-with-a-raster-89c2624d78a2
+- Source Code Repository: https://github.com/GeoTIFF/geoblaze-cli
+- Package Manager Entry: https://www.npmjs.com/package/geoblaze-cli
+- Slack Channel: https://geotiff.slack.com
+- Issue Tracker: https://github.com/GeoTIFF/geoblaze-cli/issues
+- GeoBlaze Information: https://geoblaze.io
+- Intersection Algorithm: https://medium.com/@DanielJDufour/calculating-intersection-of-polygon-with-a-raster-89c2624d78a2
 
 ## LICENSING
   The GeoBlaze CLI is distributed under the MIT License.  See the file ["LICENSE"](LICENSE) in the GeoBlaze CLI source-distribution for information on terms & conditions for accessing and otherwise using the GeoBlaze CLI and for a DISCLAIMER OF ALL WARRANTIES.

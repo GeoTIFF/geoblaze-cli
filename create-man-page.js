@@ -5,7 +5,12 @@ const man = require('remark-man')
 
 unified()
   .use(markdown)
-  .use(man, { name: 'GeoBlaze CLI' })
+  .use(man, {
+    name: 'geoblaze',
+    description: 'a command line interface for blazing fast raster analysis',
+    manual: 'GeoBlaze CLI',
+    section: 1
+  })
   .process(vfile.readSync('README.md'), function(err, file) {
     if (err) throw err
     console.log(file);

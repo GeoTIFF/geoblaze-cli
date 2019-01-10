@@ -1,4 +1,4 @@
-.TH "GEOBLAZE" "1" "January 2019" "" ""
+.TH "GEOBLAZE" "1" "January 2019" "" "GeoBlaze CLI"
 .SH "NAME"
 \fBgeoblaze\fR - a command line interface for blazing fast raster analysis
 .SH "SYNOPSIS"
@@ -64,6 +64,22 @@ GeoBlaze CLI is an open-source command line interface to the GeoBlaze JavaScript
 \fBversion\fR: Show version, which is found in the package.json
 .RE 0
 
+.SH "EXAMPLES"
+.SS "Get the Pixel Value at Paris, France"
+.P
+\fBgeoblaze id image.tiff "48.8567,2.3508"\fR
+.SS "Get Acreage of Wheat in Ukraine"
+.P
+\fBgeoblaze sum wheat.tiff ukraine.geojson\fR
+.SS "Calculate NDVI"
+.P
+\fBgeoblaze bandArithmetic image.tiff '(c - b)/(c + b)'\fR
+.SS "Binarize a Raster"
+.P
+\fBgeoblaze rasterCalculator image.tiff 'return A > 100 ? 1 : 0'\fR
+.SS "More Examples"
+.P
+ \fI\(lahttps://github.com/GeoTIFF/geoblaze-cli/blob/master/EXAMPLES.md\(ra\fR
 .SH "AUTHOR"
 .P
  Daniel J. Dufour: \fI\(lahttps://danieljdufour.com\(ra\fR
@@ -91,4 +107,4 @@ Intersection Algorithm: \fI\(lahttps://medium.com/@DanielJDufour/calculating-int
 
 .SH "LICENSING"
 .P
- The GeoBlaze CLI is distributed under the MIT License. See the file "LICENSE" in the GeoBlaze CLI source-distribution for information on terms & conditions for accessing and otherwise using the GeoBlaze CLI and for a DISCLAIMER OF ALL WARRANTIES.
+ The GeoBlaze CLI is distributed under the MIT License. See the file \fB"LICENSE"\fR \fI\(laLICENSE\(ra\fR in the GeoBlaze CLI source-distribution for information on terms & conditions for accessing and otherwise using the GeoBlaze CLI and for a DISCLAIMER OF ALL WARRANTIES.
