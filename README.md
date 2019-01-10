@@ -1,8 +1,34 @@
 # geoblaze-cli
-Command Line Interface (CLI) for GeoBlaze
+Command Line Interface (CLI) for [GeoBlaze](geoblaze.io)
 
-# Structure
-The commands follow a standard format:```geoblaze NAME_OF_CALCULATION GEORASTER GEOVECTOR COMMAND_SPECIFIC_ARGUMENTS```.
+# Usage
+```
+geoblaze identify <georaster> <point>
+geoblaze id <georaster> <point>
+geoblaze bandArithmetic <georaster> [geovector] <expression>
+geoblaze histogram <georaster> [geovector] [--scaleType={nominal|ratio}] [--numClasses=<numClasses>] [--classType={equal-interal|quantile}]
+geoblaze max <georaster> [geovector]
+geoblaze min <georaster> [geovector]
+geoblaze mean <georaster> [geovector]
+geoblaze median <georaster> [geovector]
+geoblaze mode <georaster> [geovector]
+geoblaze rasterCalculator <georaster> [geovector] <functionBody>
+geoblaze calc <georaster> [geovector] <functionBody>
+geoblaze sum <georaster> [geovector]
+```
+
+You can write the command `identify` or `id` for short, to get the pixel value at a certain location.
+### Usage
+```
+geoblaze id GEORASTER GEOVECTOR
+```
+
+### Example
+```
+geoblaze id image.tiff "-70,40"
+```
+
+
 
 The **NAME_OF_CALCULATION** can be one of the following:
  - bandArithmetic (or math)
@@ -23,18 +49,6 @@ The **GEOVECTOR** is optional.  You can provide it as a path to a geojson file, 
 The **COMMAND_SPECIFIC_ARGUMENTS** may or may not exist depending on the command.
 
 Here's instructions for each command
-
-## Identify
-You can write the command `identify` or `id` for short, to get the pixel value at a certain location.
-### Usage
-```
-geoblaze id GEORASTER GEOVECTOR
-```
-
-### Example
-```
-geoblaze id image.tiff "-70,40"
-```
 
 ## Sum
 Get the sum of the pixels in an area for each band
