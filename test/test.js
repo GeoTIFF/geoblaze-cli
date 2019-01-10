@@ -10,16 +10,28 @@ const urlToGeoTIFF = "https://s3.amazonaws.com/geoblaze/spam2005v2r0_production_
 const relativePathToGeoJSON = "test/data/ukraine.geojson"
 const urlToGeometry = "https://s3.amazonaws.com/geoblaze/ukraine.geojson";
 
+const DEBUG = process.env.GEOBLAZE_CLI_DEBUG;
+
 describe('Identify', function() {
   this.timeout(20000);
   it("Should identify a pixel value in a local file", async () => {
     const { stdout } = await exec(`geoblaze identify ${relativePathToGeoTIFF} '50,30'`);
-    expect(stdout).contains("Pixel value is -9999");
+    try {
+      expect(stdout).contains("Pixel value is -9999");
+    } catch (error) {
+      console.log(stdout);
+      throw error;
+    }
   });
 
   it("Should identify a pixel value in a remote file", async () => {
     const { stdout } = await exec(`geoblaze identify ${urlToGeoTIFF} '50,30'`);
-    expect(stdout).contains("Pixel value is -9999");
+    try {
+      expect(stdout).contains("Pixel value is -9999");
+    } catch (error) {
+      console.log(stdout);
+      throw error;
+    }
   });
 });
 

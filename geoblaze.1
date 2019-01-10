@@ -1,0 +1,75 @@
+.TH "GEOBLAZE" "1" "January 2019" "" ""
+.SH "NAME"
+\fBgeoblaze\fR - a command line interface for blazing fast raster analysis
+.SH "SYNOPSIS"
+.P
+ \fBgeoblaze help\fR
+.P
+ \fBgeoblaze identify <georaster> <point>\fR
+.P
+ \fBgeoblaze id <georaster> <point>\fR
+.RS 0
+.IP \(bu 4
+\fBgeoblaze\fR \fBbandArithmetic\fR <\fBgeoraster\fR> <\fBexpression\fR>
+.IP \(bu 4
+\fBgeoblaze\fR \fBhistogram\fR <\fBgeoraster\fR> \fB\fBgeovector\fR\fR \fB\fB--numClasses=<numClasses>\fR\fR
+.IP \(bu 4
+\fBgeoblaze\fR \fBmax\fR <\fBgeoraster\fR> \fB\fBgeovector\fR\fR
+.IP \(bu 4
+\fBgeoblaze\fR \fBmin\fR <\fBgeoraster\fR> \fB\fBgeovector\fR\fR
+.IP \(bu 4
+\fBgeoblaze\fR \fBmean\fR <\fBgeoraster\fR> \fB\fBgeovector\fR\fR
+.IP \(bu 4
+\fBgeoblaze\fR \fBmedian\fR <\fBgeoraster\fR> \fB\fBgeovector\fR\fR
+.IP \(bu 4
+\fBgeoblaze\fR \fBmode\fR <\fBgeoraster\fR> \fB\fBgeovector\fR\fR
+.IP \(bu 4
+\fBgeoblaze\fR \fBrasterCalculator\fR <\fBgeoraster\fR> <\fBfunctionBody\fR>
+.IP \(bu 4
+\fBgeoblaze\fR \fBcalc\fR <\fBgeoraster\fR> \fB\fBgeovector\fR\fR <\fBfunctionBody\fR>
+.IP \(bu 4
+\fBgeoblaze\fR \fBsum\fR <\fBgeoraster\fR> \fB\fBgeovector\fR\fR
+.IP \(bu 4
+\fBgeoblaze\fR \fBversion\fR
+.RE 0
+
+.SH "DESCRIPTION"
+.P
+ GeoBlaze CLI is an open-source command line interface to the GeoBlaze JavaScript Raster Processing Engine (geoblaze.io). It allows you to do simple basic aggregate statistics like, mean, median and mode while only typing one line. You can also use it to simply run band arithmetic like NDVI and save the result to a file.
+.SH "COMMAND LINE OPTIONS"
+.RS 0
+.IP \(bu 4
+help Display this helpful information
+.IP \(bu 4
+identify or id Get the value of the pixel at the specified point. The Point should be specified as a longitude and latitude pair "-40,20"
+.IP \(bu 4
+bandArithmetic Run band arithmetic, like NDVI, on a raster and save the result to a file.
+.IP \(bu 4
+histogram Calculate the histogram of a raster.
+.IP \(bu 4
+max Get the highest value in the raster, ignoring no data values.
+.IP \(bu 4
+min Get the lowest value in the raster, ignoring no data values.
+.IP \(bu 4
+mean Get the mean average of pixel values in a raster. You can optionally specify a geovector file, like a geojson or a shapefile, so the calculation is only run on the pixels of the raster inside of the vectors.
+.IP \(bu 4
+median Get the median average of pixel values in a raster. You can optionally specify a geovector file, like a geojson or a shapefile, so the calculation is only run on the pixels of the raster inside of the vectors.
+.IP \(bu 4
+mode Get the most common pixel value in a raster. You can optionally specify a geovector file, like a geojson or a shapefile, so the calculation is only run on the pixels of the raster inside of the vectors.
+.IP \(bu 4
+rasterCalculator or calc Run a function on the specified raster file and save the new raster to a file.
+.IP \(bu 4
+sum Get the sum of pixel values in a raster file. You can optionally specify a geovector file, like a geojson or a shapefile, so the calculation is only run on the pixels of the raster inside of the vectors.
+.IP \(bu 4
+version Show version, which is found in the package.json
+.RE 0
+
+.SH "AUTHOR"
+.P
+ Daniel J. Dufour: \fI\(lahttps://danieljdufour.com\(ra\fR
+.SH "INTERNET RESOURCES"
+.P
+ Source Code Repository: \fI\(lahttps://github.com/GeoTIFF/geoblaze-cli\(ra\fR Package Manager Entry: \fI\(lahttps://www.npmjs.com/package/geoblaze-cli\(ra\fR Slack Channel: \fI\(lahttps://geotiff.slack.com\(ra\fR Issue Tracker: \fI\(lahttps://github.com/GeoTIFF/geoblaze-cli/issues\(ra\fR GeoBlaze Information: \fI\(lahttps://geoblaze.io\(ra\fR Intersection Algorithm: \fI\(lahttps://medium.com/@DanielJDufour/calculating-intersection-of-polygon-with-a-raster-89c2624d78a2\(ra\fR
+.SH "LICENSING"
+.P
+ The GeoBlaze CLI is distributed under the MIT License. See the file "LICENSE" in the GeoBlaze CLI source-distribution for information on terms & conditions for accessing and otherwise using the GeoBlaze CLI and for a DISCLAIMER OF ALL WARRANTIES.

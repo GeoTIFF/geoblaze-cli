@@ -7,6 +7,8 @@ const calcMax = require('./max.js');
 const calcMode = require('./mode.js');
 const calcSum = require('./sum.js');
 const identify = require('./identify.js');
+const logVersion = require('./version.js');
+
 const { log } = require('./logger.js');
 
 async function run() {
@@ -55,6 +57,9 @@ async function run() {
       break;
     case "sum":
       await calcSum(...rest);
+      break;
+    case "version":
+      logVersion();
       break;
     default:
       console.log("No Command appears to have been Included");

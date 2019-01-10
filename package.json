@@ -1,6 +1,6 @@
 {
   "name": "geoblaze-cli",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Command Line Interface (CLI) for GeoBlaze",
   "main": "src/index.js",
   "bin": {
@@ -36,6 +36,10 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "remark-man": "^5.1.1",
+    "remark-parse": "^6.0.3",
+    "to-vfile": "^5.0.2",
+    "unified": "^7.1.0"
   }
 }
