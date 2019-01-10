@@ -32,7 +32,7 @@ Internet Resources:
   Package Manager Entry: https://www.npmjs.com/package/geoblaze-cli
 
 LICENSING:
-  
+  The GeoBlaze CLI is distributed under the MIT License.  See the file "LICENSE" in the GeoBlaze CLI source-distribution for information on terms & conditions for accessing and otherwise using the GeoBlaze CLI and for a DISCLAIMER OF ALL WARRANTIES.
 ```
 
 You can write the command `identify` or `id` for short, to get the pixel value at a certain location.
