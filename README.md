@@ -49,4 +49,4 @@ GeoBlaze CLI is an open-source command line interface to the GeoBlaze JavaScript
   - Intersection Algorithm: https://medium.com/@DanielJDufour/calculating-intersection-of-polygon-with-a-raster-89c2624d78a2
 
 ## LICENSING
-  The GeoBlaze CLI is distributed under the MIT License.  See the file "LICENSE" in the GeoBlaze CLI source-distribution for information on terms & conditions for accessing and otherwise using the GeoBlaze CLI and for a DISCLAIMER OF ALL WARRANTIES.
+  The GeoBlaze CLI is distributed under the MIT License.  See the file ["LICENSE"](LICENSE) in the GeoBlaze CLI source-distribution for information on terms & conditions for accessing and otherwise using the GeoBlaze CLI and for a DISCLAIMER OF ALL WARRANTIES.
