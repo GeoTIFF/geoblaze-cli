@@ -1,4 +1,4 @@
-# geoblaze(1) -- a command line interface for blazing fast raster analysis
+# geoblaze -- a command line interface for blazing fast raster analysis
 
 ## SYNOPSIS
 - `geoblaze help`
