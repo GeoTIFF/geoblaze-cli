@@ -7,7 +7,7 @@
     "geoblaze": "src/index.js"
   },
   "scripts": {
-    "test": "node ./node_modules/.bin/mocha --reporter spec"
+    "test": "bash -c 'pkill -9 http-server && cd test/data && http-server' & node ./node_modules/.bin/mocha --reporter spec"
   },
   "repository": {
     "type": "git",
@@ -32,7 +32,8 @@
   "dependencies": {
     "axios": "^0.18.0",
     "geoblaze": "^0.1.9",
-    "georaster": "^0.4.2"
+    "georaster": "^0.4.2",
+    "node-fetch": "^2.3.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",

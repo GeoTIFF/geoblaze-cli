@@ -38,11 +38,11 @@ GeoBlaze CLI is an open-source command line interface to the GeoBlaze JavaScript
 ### Get the Pixel Value at Paris, France
 `geoblaze id image.tiff "48.8567,2.3508"`
 ### Get Acreage of Wheat in Ukraine
-`geoblaze sum wheat.tiff ukraine.geojson`
+`geoblaze sum https://s3.amazonaws.com/geoblaze/spam2005v2r0_production_wheat_rainfed.tiff ukraine.geojson`
 ### Calculate NDVI
-`geoblaze bandArithmetic image.tiff '(c - b)/(c + b)'`
+`geoblaze bandArithmetic image.tiff '(c - b)/(c + b)' output.tiff`
 ### Binarize a Raster
-`geoblaze rasterCalculator image.tiff 'return A > 100 ? 1 : 0'`
+`geoblaze rasterCalculator image.tiff 'return A > 100 ? 1 : 0' output.tiff`
 ### More Examples
   https://github.com/GeoTIFF/geoblaze-cli/blob/master/EXAMPLES.md
 
