@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Command Line Interface (CLI) for GeoBlaze",
   "main": "src/index.js",
+  "man": "./man/geoblaze.1",
   "bin": {
     "geoblaze": "src/index.js"
   },

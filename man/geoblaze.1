@@ -73,10 +73,10 @@ GeoBlaze CLI is an open-source command line interface to the GeoBlaze JavaScript
 \fBgeoblaze sum https://s3.amazonaws.com/geoblaze/spam2005v2r0_production_wheat_rainfed.tiff ukraine.geojson\fR
 .SS "Calculate NDVI"
 .P
-\fBgeoblaze bandArithmetic image.tiff '(c - b)/(c + b)'\fR
+\fBgeoblaze bandArithmetic image.tiff '(c - b)/(c + b)' output.tiff\fR
 .SS "Binarize a Raster"
 .P
-\fBgeoblaze rasterCalculator image.tiff 'return A > 100 ? 1 : 0'\fR
+\fBgeoblaze rasterCalculator image.tiff 'return A > 100 ? 1 : 0' output.tiff\fR
 .SS "More Examples"
 .P
  \fI\(lahttps://github.com/GeoTIFF/geoblaze-cli/blob/master/EXAMPLES.md\(ra\fR

@@ -13,7 +13,7 @@ unified()
   })
   .process(vfile.readSync('README.md'), function(err, file) {
     if (err) throw err
-    console.log(file);
+    file.dirname = 'man';
     file.basename = 'geoblaze.1';
     file.extname = '.1'
     vfile.writeSync(file)
