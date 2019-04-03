@@ -13,14 +13,7 @@ const readFileAsync = promisify(readFile);
 async function loadGeoRaster(path) {
   try {
     if (path.startsWith('http')) {
-      if (process.env.GEOBLAZE_CLI_DEBUG) log("georaster: fetching " + path);
-      const response = await fetch(path);
-      if (process.env.GEOBLAZE_CLI_DEBUG) log("georaster: fetched " + response);
-      const buffer = await response.arrayBuffer();
-      if (process.env.GEOBLAZE_CLI_DEBUG) log("georaster: got buffer " + buffer);
-      const loaded = await parseGeoraster(buffer);
-      if (process.env.GEOBLAZE_CLI_DEBUG) log("georaster: loaded " + path);
-      return loaded;
+      return geoblaze.load(path);
     } else {
       const cwd = process.cwd();
       let abspath;
@@ -47,7 +40,7 @@ async function loadGeoVector(geovector) {
         if (process.env.GEOBLAZE_CLI_DEBUG) log("geovector: " + geovector);
         const response = await get(geovector);
         return response.data;
-      } else if (geovector.match(/^ ?\d+,\d+ ?$/)) {
+      } else if (geovector.match(/^ ?-?\d+(.\d+)?,-?\d+(.\d+)? ?$/)) {
         const result = geovector.trim().split(',').map(Number);
         if (process.env.GEOBLAZE_CLI_DEBUG) log("geovector: " + result);
         return result;
@@ -59,6 +52,7 @@ async function loadGeoVector(geovector) {
         if (process.env.GEOBLAZE_CLI_DEBUG) log('geoblaze-cli: parsed GeoJSON');
         return parsed;
       } else {
+        if (process.env.GEOBLAZE_CLI_DEBUG) log("geovector: " + geovector);
         throw new Error("Failed to parse geovector");
       }
     }

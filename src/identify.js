@@ -16,7 +16,9 @@ module.exports = async (rasterPath, vectorInput) => {
   try {
 
     const georaster = await loadGeoRaster(rasterPath);
+      if (process.env.GEOBLAZE_CLI_DEBUG) log("Object.keys(georaster): " + Object.keys(georaster));
     const geovector = await loadGeoVector(vectorInput);
+    if (process.env.GEOBLAZE_CLI_DEBUG) log("typeof geovector: " + typeof geovector);
     const result = geoblaze.identify(georaster, geovector);
 
     if (Array.isArray(result)) {
@@ -27,6 +29,8 @@ module.exports = async (rasterPath, vectorInput) => {
         log("Pixel value for bands are " + result);
       }
     } else {
+
+      if (process.env.GEOBLAZE_CLI_DEBUG) log("result: " + result);
       log("Unable to identify");
     };
   } catch (error) {

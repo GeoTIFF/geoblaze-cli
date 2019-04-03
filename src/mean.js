@@ -1,9 +1,5 @@
 const { loadBoth } = require("./loader.js");
-const {
-  log,
-  logAggregateResult,
-  logResult
-} = require('./logger.js');
+const { log } = require('./logger.js');
 const geoblaze = require('geoblaze');
 
 module.exports = async (rasterPath, vectorInput) => {
@@ -11,7 +7,7 @@ module.exports = async (rasterPath, vectorInput) => {
 
     const [ georaster, geovector ] = await loadBoth(rasterPath, vectorInput);
     const result = geoblaze.mean(georaster, geovector);
-    logAggregateResult('Mean', result);
+    log('Mean Pixel Value is ' + result);
   } catch (error) {
     console.error(error);
   }

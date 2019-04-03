@@ -5,7 +5,9 @@ const {
 const geoblaze = require('geoblaze');
 
 function logModeResult(result) {
-  if (Array.isArray(result)) {
+  if (typeof result === 'number') {
+    log(`Most Common Pixel Value (Mode) is ${result.toLocaleString()}`);
+  } else if (Array.isArray(result)) {
     if (result.length === 1) {
       log(`Most Common Pixel Value (Mode) is ${result.toLocaleString()}`);
     } else {
@@ -18,7 +20,6 @@ function logModeResult(result) {
 
 module.exports = async (rasterPath, vectorInput) => {
   try {
-
     const [ georaster, geovector ] = await loadBoth(rasterPath, vectorInput);
     const result = geoblaze.mode(georaster, geovector);
     logModeResult(result);
