@@ -1,6 +1,6 @@
 {
   "name": "geoblaze-cli",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Command Line Interface (CLI) for GeoBlaze",
   "main": "src/index.js",
   "man": "./man/geoblaze.1",
