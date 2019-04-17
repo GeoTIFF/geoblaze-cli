@@ -7,11 +7,15 @@ const exec = util.promisify(require('child_process').exec);
 // longitude then latitude
 const point = '30.059444,-1.943889';
 
-const relativePathToGeoTIFF = "test/data/RWA_MNH_ANC.tif"
-const urlToGeoTIFF = "http://127.0.0.1:8080/RWA_MNH_ANC.tif";
+const base = "http://127.0.0.1:8080/";
+
+const relativePathToGeoTIFF = "test/data/RWA_MNH_ANC.tif";
+const urlToGeoTIFF = `${base}RWA_MNH_ANC.tif`;
 
 const relativePathToGeoJSON = "test/data/kigali.geojson"
-const urlToGeoJSON = "http://127.0.0.1:8080/kigali.geojson";
+const urlToGeoJSON = `${base}kigali.geojson`;
+
+const urlToImageryTiff = `${base}color_infrared_dir_st_louis.tif`;
 
 const DEBUG = process.env.GEOBLAZE_CLI_DEBUG;
 
@@ -134,13 +138,14 @@ describe('Sum', function() {
   });
 });
 
-
-
 /*
 describe('Band Arithmetic', function() {
   this.timeout(timeout);
   it("Should calculate NDVI of a GeoTIFF", async () => {
-    const { stdout } = await exec(`geoblaze math ${relativePathToGeoTIFF} '(c - b)/(c + b)' output.tiff`);
+    const statement = `geoblaze math ${urlToImageryTiff} '(c - b)/(c + b)' output.tiff`;
+    console.log("statement:", statement);
+    const { stdout } = await exec(statement);
+    console.log("stdout:", stdout);
   });
 });
 */

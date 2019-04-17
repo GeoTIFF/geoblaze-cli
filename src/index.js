@@ -1,5 +1,6 @@
 #! /usr/bin/env node
 
+const bandArithmetic = require('./bandArithmetic.js');
 const calcMean = require('./mean.js');
 const calcMedian = require('./median.js');
 const calcMin = require('./min.js');
@@ -13,7 +14,7 @@ const { log } = require('./logger.js');
 
 async function run() {
 
-  //console.log("process.argv:", process.argv);
+  console.log("process.argv:", process.argv);
 
   const [ nodecmd, geoblazecmd,  geoBlazeFunctionName, ...rest] = process.argv;
 
@@ -28,11 +29,26 @@ async function run() {
   const normalizedFunctionName = geoBlazeFunctionName.toLowerCase();
 
   switch (normalizedFunctionName) {
+    case "bandArithmetic":
+      console.log("unfortunately we haven't implemented band arithmetic yet");
+      //await bandArithmetic(...rest);
+      break;
+    case "calc":
+      console.log("unfortunately we haven't implemented raster calculations yet");
+    case "help":
+      console.log("unfortunately we haven't implemented help yet");
+      break;
+    case "histogram":
+      console.log("unfortunately we haven't implemented histogram yet");
+      break;
     case "id":
       await identify(...rest);
       break;
     case "identify":
       await identify(...rest);
+      break;
+    case "math":
+      await bandArithmetic(...rest);
       break;
     case "max":
       await calcMax(...rest);
@@ -54,6 +70,9 @@ async function run() {
       break;
     case "mode":
       await calcMode(...rest);
+      break;
+    case "rasterCalculator":
+      console.log("unfortunately we haven't implemented rasterCalculator yet");
       break;
     case "sum":
       await calcSum(...rest);
