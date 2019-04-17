@@ -29,7 +29,10 @@ GeoBlaze CLI is an open-source command line interface to the GeoBlaze JavaScript
 ### Get the Pixel Value at Paris, France
 `geoblaze id image.tiff "48.8567,2.3508"`
 ### Get Acreage of Wheat in Ukraine
-`geoblaze sum https://s3.amazonaws.com/geoblaze/spam2005v2r0_production_wheat_rainfed.tiff ukraine.geojson`
+geoblaze sum https://s3.amazonaws.com/geoblaze/spam2005v2r0_production_wheat_rainfed.tiff https://s3.amazonaws.com/geoblaze/ukraine.geojson
+### Get Acreage of Wheat in Iowa
+geoblaze sum spam2005v2r0_production_wheat_rainfed.tiff Iowa.geojson
+
 ### More Examples
   https://github.com/GeoTIFF/geoblaze-cli/blob/master/EXAMPLES.md
 
