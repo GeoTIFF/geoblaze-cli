@@ -33,9 +33,9 @@
   "homepage": "https://github.com/GeoTIFF/geoblaze-cli#readme",
   "dependencies": {
     "axios": "^0.18.0",
-    "geoblaze": "^0.1.12",
+    "geoblaze": "^1.0.0",
     "georaster": "^0.4.2",
-    "node-fetch": "^2.3.0"
+    "node-fetch": "^3.2.10"
   },
   "devDependencies": {
     "chai": "^4.2.0",
