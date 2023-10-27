@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/GeoTIFF/geoblaze-cli#readme",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^1.6.0",
     "geoblaze": "^0.1.12",
     "georaster": "^0.4.2",
     "node-fetch": "^2.3.0"
